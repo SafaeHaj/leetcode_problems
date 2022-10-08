@@ -12,10 +12,10 @@ int maxSubArray(vector<int> &nums)
     for (int elem : nums)
     {
         max_end += elem;
-        if (max < max_end)
-            max = max_end;
-        if (max_end < 0)
-            max_end = 0;
+        
+        if (max < max_end) max = max_end;
+
+        if (max_end < 0) max_end = 0;
     }
 
     return max;
