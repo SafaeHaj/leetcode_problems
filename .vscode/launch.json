@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/verify_sudoku.exe",
+            "program": "${workspaceFolder}/search_2d.exe",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
