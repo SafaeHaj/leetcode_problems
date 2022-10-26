@@ -21,28 +21,28 @@ class MyQueue {
         if( size == 0) {
             q.push_back(x);
             front = x;
+            return;
         }
         
-        else {
-            int i = size - 1;
-            int j = -1;
-            int temp;
+        int i = size - 1;
+        int j = -1;
+        int temp;
 
-            while (i >= 0) {
-                temp = q.at(i--);
-                temp_q.push_back(temp);
-                q.pop_back();
-                j++;
-            }
-            q.push_back(x);
-
-            while(j >= 0) {
-                temp = temp_q.at(j--);
-                q.push_back(temp);
-                temp_q.pop_back();
-            }
-
+        while (i >= 0) {
+            temp = q.at(i--);
+            temp_q.push_back(temp);
+            q.pop_back();
+            j++;
         }
+
+        q.push_back(x);
+
+        while(j >= 0) {
+            temp = temp_q.at(j--);
+            q.push_back(temp);
+            temp_q.pop_back();
+            }
+
         size++;        
     }
     
