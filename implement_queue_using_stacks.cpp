@@ -9,7 +9,7 @@ class MyQueue {
     vector<int> q;
     vector<int> temp_q;
 
-public: 
+    public: 
     MyQueue() {
         front = -1;
         size = 0;
