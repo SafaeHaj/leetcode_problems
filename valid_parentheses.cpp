@@ -6,18 +6,15 @@ using namespace std;
 
 bool match(char a, char b)
 {
-    if ((a == '(' && b == ')') || (a == '[' && b == ']') || (a == '{' && b == '}'))
-        return true;
-
-    return false;
+    return ((a == '(' && b == ')') || (a == '[' && b == ']') || (a == '{' && b == '}'));
 }
 
 bool isValid(string s)
 {
-   stack<char> open;
+    stack<char> open;
     int i = 0;
 
-    while (s[i] != '\0')
+    for (int i = 0; i < s.length(); i++)
     {
         if (s[i] == '(' || s[i] == '{' || s[i] == '[')
             open.push(s[i]);
@@ -29,12 +26,7 @@ bool isValid(string s)
             else
                 open.pop();
         }
-
-        i++;
     }
 
-    if (open.empty())
-        return true;
-
-    return false;
+    return open.empty();
 }
