@@ -18,13 +18,11 @@ bool isValid(string s)
         if (s[i] == '(' || s[i] == '{' || s[i] == '[')
             open.push(s[i]);
 
+        else if (open.empty() || !match(open.top(), s[i]))
+            return false;
+        
         else
-        {
-            if (open.empty() || !match(open.top(), s[i]))
-                return false;
-            else
-                open.pop();
-        }
+            open.pop();
     }
 
     return open.empty();
