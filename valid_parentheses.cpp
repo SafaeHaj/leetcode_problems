@@ -12,7 +12,6 @@ bool match(char a, char b)
 bool isValid(string s)
 {
     stack<char> open;
-    int i = 0;
 
     for (int i = 0; i < s.length(); i++)
     {
